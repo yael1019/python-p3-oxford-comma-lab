@@ -1,10 +1,6 @@
 def oxford_comma(items):
-    str = ' '
-    for index, item in enumerate(items):
-        # print(index, items[index])
-        if index != len(items) - 1:
-            str += ','.join([item])
-        else:
-            str += ', and '.join([item])
-    return str
+    if len(items) < 3:
+        return ' and '.join(items)
+    items[len(items) - 1] = 'and ' + items[len(items) - 1]
+    return ', '.join(items)
 print(oxford_comma(['kiwi', 'salad', 'banana']))
